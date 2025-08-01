@@ -95,8 +95,6 @@ DetectionList ObjectDetector::run(const Frame& frame)
 void ObjectDetector::loadModel()
 {
 
-    // static const auto modelFile = m_modelPath /
-    //     std::filesystem::path("yolov8n.onnx");
     static const auto modelFile = m_modelPath / m_config.modelFileName;
     m_net = std::make_unique<Net>(readNetFromONNX(modelFile.string()));
 
@@ -113,8 +111,6 @@ cv::Mat ObjectDetector::formatToSquare(const cv::Mat &source, int *pad_x, int *p
 {
     int col = source.cols;
     int row = source.rows;
-    // int m_inputWidth = m_modelShape.width;
-    // int m_inputHeight = m_modelShape.height;
     int m_inputWidth  = m_config.inputSize.width;
     int m_inputHeight = m_config.inputSize.height;
 
@@ -155,13 +151,10 @@ DetectionList ObjectDetector::runImpl(const Frame& frame)
     }
 
     // Detection thresholds.
-    // float modelScoreThreshold      {0.45};
-    // float modelNMSThreshold        {0.50};
     float modelScoreThreshold { m_config.scoreThreshold };
     float modelNMSThreshold   { m_config.nmsThreshold };
 
     // Model expects 320×320 square input.
-    // cv::Size modelShape = {320, 320};
     cv::Size modelShape       { m_config.inputSize };
 
     //──────────────────────────────────────────────────────────────
@@ -295,10 +288,6 @@ DetectionList ObjectDetector::runImpl(const Frame& frame)
 
     return result;
 }
-
-
-
-
 
 } // namespace opencv_object_detection
 } // namespace vms_server_plugins
