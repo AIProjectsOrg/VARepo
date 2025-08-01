@@ -16,8 +16,6 @@ using namespace nx::sdk;
 
 namespace {
 
-// static const float kCigaretteMagnificationFactor = 3.0f;  
-
 /**
  * Magnifies a bounding box while keeping it centered and within image boundaries
  */
@@ -108,7 +106,6 @@ TrackedObjects convertDetectionsToTrackedObjects(
         {
             cvRect = magnifyBoundingBox(
                 cvRect,
-                // kCigaretteMagnificationFactor,
                 TrackerConfig::cigaretteMagnificationFactor(),
                 frame.width,
                 frame.height);
@@ -145,7 +142,6 @@ std::shared_ptr<DetectionInternal> convertTrackedObjectToDetection(
     {
         metaRect = shrinkBoundingBox(
             metaRect,
-            // kCigaretteMagnificationFactor,
             TrackerConfig::cigaretteMagnificationFactor(),
             frame.width,
             frame.height);
@@ -153,10 +149,6 @@ std::shared_ptr<DetectionInternal> convertTrackedObjectToDetection(
 
     auto detection = std::make_shared<Detection>(Detection{
     /*boundingBox*/ cvRectToNxRect(metaRect, frame.width, frame.height),
-    
-    
-    // auto detection = std::make_shared<Detection>(Detection{
-    //     /*boundingBox*/ cvRectToNxRect(trackedDetection.rect, frame.width, frame.height),
         classLabel,
         (float) trackedDetection.confidence,
         /*trackId*/ idMapper->get(trackedDetection.object_id)});
