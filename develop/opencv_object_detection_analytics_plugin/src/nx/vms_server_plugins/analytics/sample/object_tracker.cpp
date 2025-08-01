@@ -119,38 +119,6 @@ ObjectTracker::Result ObjectTracker::run(const Frame& frame, const DetectionList
 //-------------------------------------------------------------------------------------------------
 // private
 
-// EventList ObjectTracker::generateDetectionFinishedEvents(int64_t timestampUs)
-// {
-//     EventList result;
-//     for (const std::string& classLabel: kClassesToDetect)
-//     {
-//         if (m_detectionActive[classLabel])
-//         {
-//             bool noActiveTracks = true;
-//             for (const auto& pair: m_tracks)
-//             {
-//                 const std::shared_ptr<Track> track = pair.second;
-//                 if (track->classLabel() == "person")
-//                 {
-//                     noActiveTracks = false;
-//                     break;
-//                 }
-//             }
-
-//             if (noActiveTracks)
-//             {
-//                 result.push_back(std::make_shared<Event>(Event{
-//                     /*eventType*/ EventType::detection_finished,
-//                     /*timestampUs*/ timestampUs,
-//                     /*classLabel*/ classLabel,
-//                 }));
-//                 m_detectionActive[classLabel] = false;
-//             }
-//         }
-//     }
-//     return result;
-// }
-
 EventList ObjectTracker::generateDetectionFinishedEvents(int64_t timestampUs)
 {
     EventList result;
