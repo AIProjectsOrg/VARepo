@@ -20,14 +20,6 @@ namespace sample_company {
 namespace vms_server_plugins {
 namespace opencv_object_detection {
 
-// struct DetectorConfig
-// {
-//     std::string   modelFileName  = "smoking-yolo 640.onnx";
-//     cv::Size      inputSize      = {640, 640};
-//     float         scoreThreshold = 0.1f;
-//     float         nmsThreshold   = 0.50f;
-// };
-
 struct DetectorConfig
 {
     std::string   modelFileName  = TrackerConfig::detectorModelFile();
@@ -58,7 +50,6 @@ private:
     float* scale
    );
 
-    
 
 private:
     bool m_netLoaded = false;
