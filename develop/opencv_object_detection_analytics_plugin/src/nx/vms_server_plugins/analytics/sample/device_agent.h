@@ -55,10 +55,6 @@ private:
         const nx::sdk::analytics::IUncompressedVideoFrame* videoFrame);
 
 private:
-    // const std::string kCigaretteObjectType = "nx.base.Cigarette";
-    // const std::string kPersonObjectType = "nx.base.Person";
-    // const std::string kSmokeObjectType = "nx.base.Smoke";
-
     const std::string kCigaretteObjectType = "sample.opencv_object_detection.cigarette";
     const std::string kPersonObjectType = "sample.opencv_object_detection.person";
     const std::string kSmokeObjectType = "sample.opencv_object_detection.smoke";
