@@ -1,4 +1,4 @@
-# VARepo
+# Smoke Detection in Surveillance Footage via Video Analytics
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1adLKs0VtXp50P37aBb1ZN4qpXhlA2vYH?usp=sharing)
 
