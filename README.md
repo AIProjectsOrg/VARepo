@@ -9,7 +9,10 @@
 
 ## 📚 Module Overview
 
-TODO
+## 📋 Table of content
+ 1. [Dataset](https://github.com/WindowsPointCloud/PointCloudSystem/blob/main/README.md#-system-requirement)
+ 2. [Training](https://github.com/WindowsPointCloud/PointCloudSystem/blob/main/README.md#-setup)
+ 3. [NX Meta Server](https://github.com/WindowsPointCloud/PointCloudSystem/blob/main/README.md#%EF%B8%8F-known-warning-errors)
 
 ## 1. Dataset
 
@@ -74,9 +77,9 @@ version = project.version(1)
 dataset = version.download("yolov8")
 ```
 
-## 2. Training [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1adLKs0VtXp50P37aBb1ZN4qpXhlA2vYH?usp=sharing).
+## 2. Training
 
-The training code is provided in Google Colab link above.
+The training code is provided in Google Colab link [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1adLKs0VtXp50P37aBb1ZN4qpXhlA2vYH?usp=sharing).
 
 ### 2.1 Model Selection and Training
 
