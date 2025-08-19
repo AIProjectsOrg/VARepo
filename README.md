@@ -88,7 +88,7 @@ We adopted balanced sampling using [Weighted Dataloader](https://y-t-g.github.io
 - Counts instances per class and computes inverse frequency weights.
 - Aggregates label weights per image using functions like np.mean or np.sum.
 - Calculates sampling probabilities to ensure minority classes appear more frequently in training batches.
-- Overrides the __getitem__ method to sample images based on these probabilities
+- Overrides the `__getitem__` method to sample images based on these probabilities
 
 
 
