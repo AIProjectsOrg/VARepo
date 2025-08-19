@@ -14,11 +14,12 @@ TODO
 ## 1. Dataset
 
 1.1 Smoking CCTV Detection
-- The original dataset was released by the Roboflow user SmokingCigaretteCCTV and is available at [[link]](https://universe.roboflow.com/smokingcigarettecctv/smoking-cctv-detection).
+- The original dataset was released by the Roboflow user SmokingCigaretteCCTV and is available at [[Original Dataset]](https://universe.roboflow.com/smokingcigarettecctv/smoking-cctv-detection).
 - This dataset is a **rare dataset** that focuses on **realistic CCTV scenarios**, rather than the open-angle or close-up perspectives commonly seen in most existing datasets.
 - However, the **original annotations** were **incomplete**, where i) person instances were not labelled, and ii) many existing class instances were missing or incorrectly labelled.
 - We **re-annotated** the dataset to better align it with the scope of our study.
 - Specifically, the revised dataset contains **207 images** annotated in YOLOv8 format, with **three object classes**: 1) cigarette, 2) person, and 3) smoke.
+- The images are split into training, validation, and test sets using a standard 7:2:1 ratio, resulting in **145 training images**, **41 validation images**, and **21 test images**. 
 - Our re-annotated dataset can be accessed via the [[Dataset link]](https://universe.roboflow.com/smoking-gqlqh/smoking-cctv-detection-x4fjr), or through the Python code below.
 
 ```python
@@ -34,7 +35,7 @@ dataset = version.download("yolov8")
 - The original dataset consists of 2,789 images annotated in YOLOv8 format, with three labelled classes: 1) cigarette, 2) person, and 3) smoke.
 - However, the **smoke image**s in this dataset are significantly **out-of-distribution** compared to those in the Smoking-CCTV-Detection dataset.
 - Specifically, these images are close-up views of smoke, which differ greatly from the surveillance or CCTV angles central to our target application.
-- Therefore, all images containing the smoke label were removed, resulting in a **filtered dataset** of **2,447 images**.
+- Therefore, all images containing the smoke label were removed, resulting in a **filtered dataset** of **1,960 training images** (we discard validation and test set, since this dataset is meant for complementary training dataset).
 - Our re-annotated dataset can be accessed via the [[Dataset link]](https://universe.roboflow.com/smoking-gqlqh/smoking-person-detection-2-ijwga), or through the Python code below. 
 
 ```python
