@@ -1,6 +1,6 @@
 # VARepo
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1jWLeVjXbc6F99JJNhKAvoJ5dIl5ua4Ch?usp=sharing)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1adLKs0VtXp50P37aBb1ZN4qpXhlA2vYH?usp=sharing)
 
 [![](https://img.shields.io/badge/Windows-11-0078D6?style=flat-square&logo=Windows)](https://www.microsoft.com/en-us/windows/)
 [![](https://img.shields.io/badge/Cuda-11.8-6B8E23?style=flat-square&logo=Nvidia)](https://developer.nvidia.com/cuda-11.6-download-archive?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exelocal)
