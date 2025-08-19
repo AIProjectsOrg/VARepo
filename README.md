@@ -58,9 +58,7 @@ dataset = version.download("yolov8")
 python3 synthetic_data_generation.py --image_dir "/path/to/your/yolo/images" --label_dir "/path/to/your/yolo/txt/labels" --bg_dir "/path/to/your/background/images"
 ```
 
-
-1.1 labeled dataset
-- synthetic dataset
+- You can get our compiled dataset including **1.1 Smoking CCTV Detection**, **1.2 Smoking Person Detection**, & the sample **synthetic dataset** we generated using **Paris or Not Paris Dataset** as background images.
 
 ## 2. Training
 
