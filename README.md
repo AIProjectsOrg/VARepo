@@ -78,7 +78,21 @@ dataset = version.download("yolov8")
 
 The training code is provided in Google Colab link above.
 
-### 2.1 Balanced Sampling
+### 2.1 Model Selection and Training
+
+We use the well-established `YOLOv8` model from the `Ultralytics` module as our object detection model. Specifically, the specifications of our model training are defined below. The remaining hyperparameters were set to their default values. 
+1. Model: YOLOv8n
+2. Epochs: 50
+3. Training Batch Size: 16
+4. Image Size: 640 x 640
+
+💡 Improvement Suggestions:
+- We suggest increasing the image size to 960 × 960 if your hardware supports higher input resolution. Empirical results indicate that 960 × 960 performs better, but our hardware only supports up to 640 × 640.
+- Using YOLOv8s can improve performance. However, if you must choose between increasing the image resolution to 960 × 960 or upgrading the model from YOLOv8n to YOLOv8s, we recommend prioritizing image resolution. If your hardware can still support it afterward, then consider switching to YOLOv8s.
+- ⚠️ Collecting additional data is more effective than naively scaling up your model size. We recommend gathering a small dataset from your actual deployment environment and training your model with it—alongside our provided dataset. This approach typically yields better results than simply increasing model size.
+
+### 2.2 Balanced Sampling
+
 The dataset used in this project is highly imbalanced, with a notable shortage of smoke instances, as illustrated in the figure below. Figure (a) is the Dataset 1.1 Smoking CCTV Detection, Figure (b) is 1.1 Smoking CCTV Detection + 1.2 Smoking Person Detection.
 
 <img src="assets/Class Imbalanced.png" alt="Class Distribution" width="600"/>
