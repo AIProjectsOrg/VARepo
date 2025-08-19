@@ -107,6 +107,7 @@ We adopted balanced sampling using [Weighted Dataloader](https://y-t-g.github.io
 - Calculates sampling probabilities to ensure minority classes appear more frequently in training batches.
 - Overrides the `__getitem__` method to sample images based on these probabilities
 
+Notably, we used `balanced sampling` in our [Winning Solution for ICIP 2025 Competition](https://d197for5662m48.cloudfront.net/documents/publicationstatus/270057/preprint_pdf/3a6eaf4b76a0286b76755e0d2a091fd3.pdf).
 
 ## 3. NX Meta Server
 
