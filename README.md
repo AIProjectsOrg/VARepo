@@ -13,7 +13,7 @@ TODO
 
 ## 1. Dataset
 
-1.1 Smoking CCTV Detection
+### 1.1 Smoking CCTV Detection
 - The original dataset was released by the Roboflow user SmokingCigaretteCCTV and is available at [[Original Dataset]](https://universe.roboflow.com/smokingcigarettecctv/smoking-cctv-detection).
 - This dataset is a **rare dataset** that focuses on **realistic CCTV scenarios**, rather than the open-angle or close-up perspectives commonly seen in most existing datasets.
 - However, the **original annotations** were **incomplete**, where i) person instances were not labelled, and ii) many existing class instances were missing or incorrectly labelled.
@@ -30,7 +30,7 @@ version = project.version(4)
 dataset = version.download("yolov8")
 ```
 
-1.2 Smoking Person Detection
+### 1.2 Smoking Person Detection
 - We propose using Smoking-Person-Detection Dataset as a complementary training dataset.
 - The original dataset consists of 2,789 images annotated in YOLOv8 format, with three labelled classes: 1) cigarette, 2) person, and 3) smoke.
 - However, the **smoke image**s in this dataset are significantly **out-of-distribution** compared to those in the Smoking-CCTV-Detection dataset.
@@ -46,7 +46,7 @@ version = project.version(1)
 dataset = version.download("yolov8")
 ```
 
-1.3 Synthetic Data Generation Pipeline
+### 1.3 Synthetic Data Generation Pipeline
 - This project applies the **Copy-Paste augmentation** technique to generate synthetic data, inspired by [this paper](https://openaccess.thecvf.com/content/CVPR2021/papers/Ghiasi_Simple_Copy-Paste_Is_a_Strong_Data_Augmentation_Method_for_Instance_CVPR_2021_paper.pdf).
 - This method enriches training diversity by **cropping objects from source images** and **pasting them onto new background scenes**, enabling the creation of complex and varied samples without additional data collection. 
 - In our implementation, all annotated objects from each source image are selected and pasted onto a target image that has been resized to the same resolution.
@@ -78,7 +78,13 @@ dataset = version.download("yolov8")
 
 The training code is provided in Google Colab link above.
 
-2.1 Balanced Sampling
+### 2.1 Balanced Sampling
+The dataset used in this project is very imbalanced. Most notably, there is a serious lack of smoke instances, as shown in the following:
+
+<img src="assets/Class Imbalanced.png" alt="Class Distribution" width="600"/>
+
+Figure (a) is the Dataset 1.1 Smoking CCTV Detection, Figure (b) is 1.1 Smoking CCTV Detection + 1.2 Smoking Person Detection.
+
 We adopted balanced sampling using [Weighted Dataloader](https://y-t-g.github.io/tutorials/yolo-class-balancing/)
 - Instead of modifying loss functions or undersampling majority classes, the author creates a custom YOLOWeightedDataset class that:
 - Counts instances per class and computes inverse frequency weights.
