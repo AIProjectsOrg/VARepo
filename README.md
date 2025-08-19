@@ -60,6 +60,7 @@ python3 synthetic_data_generation.py --image_dir "/path/to/your/yolo/images" --l
 ```
 
 - You can get our compiled dataset below, which includes **1.1 Smoking CCTV Detection**, **1.2 Smoking Person Detection**, and our sample **synthetic dataset** we generated using Paris or Not Paris Dataset as background images.
+- Please ONLY use the train set of the following dataset, since **1.1 Smoking CCTV Detection** is the main validation/test scenario.
 
 ```python
 # Compiled Dataset
