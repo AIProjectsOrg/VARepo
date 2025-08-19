@@ -10,9 +10,9 @@
 ## 📚 Module Overview
 
 ## 📋 Table of content
- 1. [Dataset](https://github.com/WindowsPointCloud/PointCloudSystem/blob/main/README.md#-system-requirement)
- 2. [Training](https://github.com/WindowsPointCloud/PointCloudSystem/blob/main/README.md#-setup)
- 3. [NX Meta Server](https://github.com/WindowsPointCloud/PointCloudSystem/blob/main/README.md#%EF%B8%8F-known-warning-errors)
+ 1. [Dataset](https://github.com/AIProjectsOrg/VARepo?tab=readme-ov-file#1-dataset)
+ 2. [Training](https://github.com/AIProjectsOrg/VARepo?tab=readme-ov-file#2-training)
+ 3. [NX Meta Server](https://github.com/AIProjectsOrg/VARepo?tab=readme-ov-file#3-nx-meta-server)
 
 ## 1. Dataset
 
