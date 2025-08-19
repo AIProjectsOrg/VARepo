@@ -56,6 +56,7 @@ dataset = version.download("yolov8")
 
 ```bash
 # The synthetic data generation code
+# The generated data will be saved into the original image_dir and label_dir
 python3 synthetic_data_generation.py --image_dir "/path/to/your/yolo/images" --label_dir "/path/to/your/yolo/txt/labels" --bg_dir "/path/to/your/background/images"
 ```
 
