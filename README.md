@@ -129,6 +129,7 @@ We found that the following settings allow the `ultralytics` ONNX export to work
 - We proposed a `non-parametric` way to solve this problem, which can also be `plug-and-play` regardless of the tracking algorithm.
 - Just `enlarge` the bounding box of the cigarette(s) before passing it to the tracking algorithm. This greatly improves tracking performance in our tests. Afterwards, reduce the box size again for visualization.
 
+<img src="assets/Challenges in Small Object Tracking.png" alt="Challenges in Small Object Tracking" width="600"/>
 
 # Acknowledgement
 1. [Ultralytics YOLO](https://github.com/ultralytics/ultralytics)
