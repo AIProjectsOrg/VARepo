@@ -50,15 +50,19 @@ dataset = version.download("yolov8")
 - This project applies the **Copy-Paste augmentation** technique to generate synthetic data, inspired by [this paper](https://openaccess.thecvf.com/content/CVPR2021/papers/Ghiasi_Simple_Copy-Paste_Is_a_Strong_Data_Augmentation_Method_for_Instance_CVPR_2021_paper.pdf).
 - This method enriches training diversity by **cropping objects from source images** and **pasting them onto new background scenes**, enabling the creation of complex and varied samples without additional data collection. 
 - In our implementation, all annotated objects from each source image are selected and pasted onto a target image that has been resized to the same resolution.
+- You can get our compiled dataset below, which includes **1.1 Smoking CCTV Detection**, **1.2 Smoking Person Detection**, and our sample **synthetic dataset** we generated using Paris or Not Paris Dataset as background images.
+```python
+
+```
+
 - ⚠️ We **STRONGLY** recommend generating your synthetic data based on your intended background and CCTV angles, so that the model can better adapt to your specific application use case.
 - 💡 But if your dataset is big enough, then feel free to use more diverse background images.
+- Notably, our synthetic dataset generation contributes to one of the **Top 3 Winning Teams** in the [IJCNN 2025 Drone vs Bird Detection Challenge](https://github.com/yjwong1999/IJCNN2025-DvB).
 
 ```bash
 # The synthetic data generation code
 python3 synthetic_data_generation.py --image_dir "/path/to/your/yolo/images" --label_dir "/path/to/your/yolo/txt/labels" --bg_dir "/path/to/your/background/images"
 ```
-
-- You can get our compiled dataset including **1.1 Smoking CCTV Detection**, **1.2 Smoking Person Detection**, & the sample **synthetic dataset** we generated using **Paris or Not Paris Dataset** as background images.
 
 ## 2. Training
 
