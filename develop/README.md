@@ -56,4 +56,3 @@ Commit, rebuild, and redeploy the DLL to apply new settings.
 
 ---
 
-© 2025 Sample Company – Video Analytics Team
