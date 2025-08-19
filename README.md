@@ -80,4 +80,12 @@ Model training
 model generation in ONNX
 
 
+
+
 ## 3. NX Meta Server
+
+
+
+# Acknowledgement
+1. [Ultralytics YOLO](https://github.com/ultralytics/ultralytics)
+2. [Balanced Sampling using Weighted Dataloader](https://y-t-g.github.io/tutorials/yolo-class-balancing/)
