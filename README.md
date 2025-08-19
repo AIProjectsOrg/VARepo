@@ -105,10 +105,26 @@ We adopted balanced sampling using [Weighted Dataloader](https://y-t-g.github.io
 - Overrides the `__getitem__` method to sample images based on these probabilities
 
 
-
-
 ## 3. NX Meta Server
 
+There is not much to elaborate on regarding the NX Meta Server deployment. Please refer to our report for further details.
+
+### 3.1 ONNX Version
+
+We found that the following settings allow the `ultralytics` ONNX export to work on our Windows machine. However, your configuration may differ depending on your environment, so adjustments might be necessary
+1. Format: onnx
+2. Opset: 12
+3. Simplify: True
+4. Dynamic: False
+5. Batch: 1
+6. Image Size: 640
+
+### 3.2 Tracking Small Objects (Cigarettes)
+
+- It is difficult to track the cigarette in CCTV footage because the object’s bounding box is small.
+- Consequently, the Intersection over Union (IoU) between the previous and current appearances is close to zero, and occasionally exactly zero.
+- We proposed a `non-parametric` way to solve this problem, which can also be `plug-and-play` regardless of the tracking algorithm.
+- Just `enlarge` the bounding box of the cigarette(s) before passing it to the tracking algorithm. This greatly improves tracking performance in our tests. Afterwards, reduce the box size again for visualization.
 
 
 # Acknowledgement
