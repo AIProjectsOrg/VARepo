@@ -52,7 +52,7 @@ dataset = version.download("yolov8")
 - In our implementation, all annotated objects from each source image are selected and pasted onto a target image that has been resized to the same resolution.
 - ⚠️ We **STRONGLY** recommend generating your synthetic data based on your intended background and CCTV angles, so that the model can better adapt to your specific application use case.
 - 💡 But if your dataset is big enough, then feel free to use more diverse background images.
-- Notably, our synthetic dataset generation contributes to one of the **Top 3 Winning Teams** in the [IJCNN 2025 Drone vs Bird Detection Challenge](https://github.com/yjwong1999/IJCNN2025-DvB).
+- Notably, our synthetic dataset generation contributes to one of the **Top 3 Winning Teams** in the [IJCNN 2025 Drone vs Bird Detection Challenge](https://d197for5662m48.cloudfront.net/documents/publicationstatus/254531/preprint_pdf/0e4495c13bbf87af25543ab78189b3f0.pdf).
 
 ```bash
 # The synthetic data generation code
@@ -79,11 +79,9 @@ dataset = version.download("yolov8")
 The training code is provided in Google Colab link above.
 
 ### 2.1 Balanced Sampling
-The dataset used in this project is very imbalanced. Most notably, there is a serious lack of smoke instances, as shown in the following:
+The dataset used in this project is highly imbalanced, with a notable shortage of smoke instances, as illustrated in the figure below. Figure (a) is the Dataset 1.1 Smoking CCTV Detection, Figure (b) is 1.1 Smoking CCTV Detection + 1.2 Smoking Person Detection.
 
 <img src="assets/Class Imbalanced.png" alt="Class Distribution" width="600"/>
-
-Figure (a) is the Dataset 1.1 Smoking CCTV Detection, Figure (b) is 1.1 Smoking CCTV Detection + 1.2 Smoking Person Detection.
 
 We adopted balanced sampling using [Weighted Dataloader](https://y-t-g.github.io/tutorials/yolo-class-balancing/)
 - Instead of modifying loss functions or undersampling majority classes, the author creates a custom YOLOWeightedDataset class that:
@@ -91,9 +89,6 @@ We adopted balanced sampling using [Weighted Dataloader](https://y-t-g.github.io
 - Aggregates label weights per image using functions like np.mean or np.sum.
 - Calculates sampling probabilities to ensure minority classes appear more frequently in training batches.
 - Overrides the __getitem__ method to sample images based on these probabilities
-
-Model training
-model generation in ONNX
 
 
 
