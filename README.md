@@ -13,13 +13,11 @@ TODO
 
 ## 1. Dataset
 
-Smoking CCTV Detection
-[[Dataset link]](https://universe.roboflow.com/smoking-gqlqh/smoking-cctv-detection-x4fjr)
+1.1 Smoking CCTV Detection [[Dataset link]](https://universe.roboflow.com/smoking-gqlqh/smoking-cctv-detection-x4fjr)
 
-Smoking Person Detection
-[[Dataset link]](https://universe.roboflow.com/smoking-gqlqh/smoking-person-detection-2-ijwga)
+1.2 Smoking Person Detection [[Dataset link]](https://universe.roboflow.com/smoking-gqlqh/smoking-person-detection-2-ijwga)
 
-Synthetic Dataset
+1.3 Synthetic Dataset
 
 1.1 labeled dataset
 - synthetic dataset
