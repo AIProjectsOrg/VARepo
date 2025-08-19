@@ -74,7 +74,17 @@ version = project.version(1)
 dataset = version.download("yolov8")
 ```
 
-## 2. Training
+## 2. Training [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1adLKs0VtXp50P37aBb1ZN4qpXhlA2vYH?usp=sharing).
+
+The training code is provided in Google Colab link above.
+
+2.1 Balanced Sampling
+We adopted balanced sampling using [Weighted Dataloader](https://y-t-g.github.io/tutorials/yolo-class-balancing/)
+- Instead of modifying loss functions or undersampling majority classes, the author creates a custom YOLOWeightedDataset class that:
+- Counts instances per class and computes inverse frequency weights.
+- Aggregates label weights per image using functions like np.mean or np.sum.
+- Calculates sampling probabilities to ensure minority classes appear more frequently in training batches.
+- Overrides the __getitem__ method to sample images based on these probabilities
 
 Model training
 model generation in ONNX
