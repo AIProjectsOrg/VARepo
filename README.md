@@ -15,6 +15,19 @@ TODO
 
 1.1 Smoking CCTV Detection [[Dataset link]](https://universe.roboflow.com/smoking-gqlqh/smoking-cctv-detection-x4fjr)
 
+- The original dataset was released by the Roboflow user SmokingCigaretteCCTV and is available at [[link]](https://universe.roboflow.com/smokingcigarettecctv/smoking-cctv-detection).
+- This dataset is a **rare dataset** that focuses on **realistic CCTV scenarios**, rather than the open-angle or close-up perspectives commonly seen in most existing datasets.
+- However, the **original annotations** were **incomplete**, where i) person instances were not labelled, and ii) many existing class instances were missing or incorrectly labelled.
+- We **re-annotated** the dataset to better align it with the scope of our study.
+- Specifically, the revised dataset contains 207 images annotated in YOLOv8 format, with **three object classes**: 1) cigarette, 2) person, and 3) smoke.
+```python
+from roboflow import Roboflow
+rf = Roboflow(api_key="rvc5pEYx6sd3cZ8EBcDW")
+project = rf.workspace("smoking-gqlqh").project("smoking-cctv-detection-x4fjr")
+version = project.version(4)
+dataset = version.download("yolov8")
+```
+
 1.2 Smoking Person Detection [[Dataset link]](https://universe.roboflow.com/smoking-gqlqh/smoking-person-detection-2-ijwga)
 
 1.3 Synthetic Dataset
