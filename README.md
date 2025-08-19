@@ -51,6 +51,9 @@ dataset = version.download("yolov8")
 - This method enriches training diversity by **cropping objects from source images** and **pasting them onto new background scenes**, enabling the creation of complex and varied samples without additional data collection. 
 - In our implementation, all annotated objects from each source image are selected and pasted onto a target image that has been resized to the same resolution.
 
+```bash
+python3 synthetic_data_generation.py --image_dir "/path/to/your/yolo/images" --label_dir "/path/to/your/yolo/txt/labels" --bg_dir "/path/to/your/background/images"
+```
 
 
 1.1 labeled dataset
