@@ -10,3 +10,16 @@
 ## 📚 Module Overview
 
 TODO
+
+## 1. Dataset
+
+1.1 labeled dataset
+- synthetic dataset
+
+## 2. Training
+
+Model training
+model generation in ONNX
+
+
+3. NX Meta Server
