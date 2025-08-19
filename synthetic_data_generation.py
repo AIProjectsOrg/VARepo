@@ -2,6 +2,7 @@ import os
 import cv2
 import numpy as np
 import random
+import argparse
 
 def load_yolo_labels(label_path, img_width, img_height):
     bboxes = []
@@ -75,5 +76,18 @@ def generate_synthetic_dataset(image_dir, label_dir, bg_dir):
 
         print(f"Generated: {synthetic_img_name} and {synthetic_label_name}")
 
-# Example usage
-generate_synthetic_dataset('/content/combined-dataset/train/images', '/content/combined-dataset/train/labels', '/content/backgrounds')
+def main():
+    parser = argparse.ArgumentParser(description='Generate synthetic dataset by pasting objects on background images')
+    parser.add_argument('--image_dir', type=str, required=True, 
+                       help='Directory containing original images')
+    parser.add_argument('--label_dir', type=str, required=True,
+                       help='Directory containing YOLO label txt files')
+    parser.add_argument('--bg_dir', type=str, required=True,
+                       help='Directory containing background images')
+    
+    args = parser.parse_args()
+    
+    generate_synthetic_dataset(args.image_dir, args.label_dir, args.bg_dir)
+
+if __name__ == "__main__":
+    main()
